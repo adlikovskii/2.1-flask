@@ -1,0 +1,65 @@
+
+@baseUrl = http://127.0.0.1:5000/api
+
+# создание пользователя
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "name": "name",
+  "email": "email@email.ru",
+  "password": "password"
+}
+
+###
+
+# логин
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "id": 1,
+  "password": "password"
+}
+
+###
+
+# создание объявления
+POST {{baseUrl}}/ads
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMzczMjM3NywianRpIjoiMjBhODQ2ZGQtMWNiMi00ZWYxLTljN2MtNzg4OGY4NDNhZGZjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NCwibmJmIjoxNzIzNzMyMzc3LCJjc3JmIjoiYTE3ZDBiNWItNjhjNS00ZGUxLTk5OTQtZDJlNDFlYjVmYzZmIiwiZXhwIjoxNzIzNzMzMjc3fQ.h2UsGey8EADt9kqWqwWbqlXH269_AFcsvAyKW-W29Qk
+Content-Type: application/json
+
+{
+    "title": "Название",
+    "description": "Какой-то текст"
+}
+
+###
+
+# получение объявления
+GET {{baseUrl}}/ads/1
+Content-Type: application/json
+
+
+###
+
+# получение пользователя
+GET {{baseUrl}}/users/1
+Content-Type: application/json
+
+###
+
+PATCH {{baseUrl}}/ads/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMzczMjM3NywianRpIjoiMjBhODQ2ZGQtMWNiMi00ZWYxLTljN2MtNzg4OGY4NDNhZGZjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NCwibmJmIjoxNzIzNzMyMzc3LCJjc3JmIjoiYTE3ZDBiNWItNjhjNS00ZGUxLTk5OTQtZDJlNDFlYjVmYzZmIiwiZXhwIjoxNzIzNzMzMjc3fQ.h2UsGey8EADt9kqWqwWbqlXH269_AFcsvAyKW-W29Qk
+Content-Type: application/json
+
+{
+    "title": "Название вариант 2",
+    "description": "Какой-то новый текст"
+}
+
+###
+
+# удаление объявления
+DELETE {{baseUrl}}/ads/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMzczMjM3NywianRpIjoiMjBhODQ2ZGQtMWNiMi00ZWYxLTljN2MtNzg4OGY4NDNhZGZjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NCwibmJmIjoxNzIzNzMyMzc3LCJjc3JmIjoiYTE3ZDBiNWItNjhjNS00ZGUxLTk5OTQtZDJlNDFlYjVmYzZmIiwiZXhwIjoxNzIzNzMzMjc3fQ.h2UsGey8EADt9kqWqwWbqlXH269_AFcsvAyKW-W29Qk
